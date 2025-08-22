@@ -3,7 +3,7 @@ name: Deploy Portfolio to S3
 on:
   push:
     branches:
-      - main   # change to 'master' if your default branch is master
+      - main   # change if your default branch is 'master'
 
 jobs:
   deploy:
@@ -22,14 +22,13 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: .   # upload everything from repo root
+          SOURCE_DIR: .
 
       - name: Invalidate CloudFront cache
         uses: chetan/invalidate-cloudfront-action@v2
-        with:
-          distribution-id: EK6LXF8Z1JFRW   # ✅ your CloudFront distribution ID
-          paths: "/*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
+          DISTRIBUTION: EK6LXF8Z1JFRW        # ✅ your distribution ID
+          PATHS: "/*"                        # ✅ which paths to invalidate
