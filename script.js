@@ -47,7 +47,10 @@
 // ===============================
 // Dynamic Footer Year
 // ===============================
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // ===============================
 // 3D Tilt Effect for Cards

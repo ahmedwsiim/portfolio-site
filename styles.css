@@ -18,15 +18,17 @@
 }
 
 body {
+  font-family: sans-serif;
+  background: #f8fafc;
+  color: #222;
   margin: 0;
-  font-family: "Inter", sans-serif;
-  color: var(--text-light);
-  background: radial-gradient(circle at 10% 20%, var(--bg-dark) 20%, var(--bg-darker) 80%);
-  line-height: 1.6;
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+}
+
+header, footer {
+  background: #e0e7ef;
+  padding: 1rem;
+  text-align: center;
 }
 
 /* 🌌 Animated Gradient Background */
@@ -71,9 +73,9 @@ nav {
 }
 
 nav a {
-  color: var(--text-light);
+  margin: 0 1rem;
+  color: #2563eb;
   text-decoration: none;
-  margin-left: 1rem;
   transition: color 0.3s;
 }
 nav a:hover {
@@ -155,4 +157,18 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+
+
+}  margin-bottom: 2rem;  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
 }
