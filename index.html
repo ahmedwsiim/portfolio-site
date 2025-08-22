@@ -1,48 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ahmad — DevOps Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Muhammad Ahmad</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>DevOps Engineer & Cloud Enthusiast.</p>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python</li>
-        <li>Docker</li>
-        <li>AWS</li>
-      </ul>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>Notes Platform (Docker)</li>
-        <li>Movie Recommender (CI/CD)</li>
-      </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: mo.ahmedwasiim@gmail.com</p>
-    </section>
-  </main>
-  <footer>
-    <p>© Muhammad Ahmad</p>
-  </footer>
+<body class="dark">
+<header>
+  <nav class="navbar">
+    <div class="logo">MA</div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="gradient-text animate-fade">Muhammad Ahmad</h1>
+      <p class="animate-fade delay-1">DevOps Engineer • Cloud Enthusiast • Problem Solver</p>
+      <a href="#contact" class="btn animate-fade delay-2">Let’s Connect</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>
+      I’m a <strong>DevOps & Cloud Engineer</strong> passionate about automation, 
+      scalable infrastructure, and modern deployment pipelines.  
+      Skilled in Docker, Kubernetes, NGINX, and CI/CD, I focus on building
+      <em>secure and high-performance cloud-native applications</em>.
+    </p>
+  </section>
+
+  <section id="projects" class="section reveal">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🚀 Docker-Orchestrated Full-Stack Notes Platform</h3>
+      </div>
+      <p>Full-stack MERN app containerized with Docker & Compose. Built with DevOps-first design, scalable and secure.</p>
+      <div class="tags">
+        <span>MERN</span><span>Docker</span><span>NGINX</span><span>CI/CD</span>
+      </div>
+      <a href="https://github.com/ahmedwsiim/mern-notes-docker" target="_blank" class="btn-link">View Project →</a>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-header">
+        <h3>⚡ Automated CI/CD Movie Recommender</h3>
+      </div>
+      <p>FastAPI + Streamlit app, fully containerized and deployed on Azure using GitHub Actions with zero downtime.</p>
+      <div class="tags">
+        <span>FastAPI</span><span>Streamlit</span><span>Azure</span><span>CI/CD</span>
+      </div>
+      <a href="https://github.com/ahmedwsiim/Movie-Recommender" target="_blank" class="btn-link">View Project →</a>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-header">
+        <h3>☁️ Terraform EC2 Automation</h3>
+      </div>
+      <p>Infrastructure as Code: Automated AWS EC2 provisioning using Terraform integrated with GitHub Actions.</p>
+      <div class="tags">
+        <span>AWS</span><span>Terraform</span><span>IaC</span>
+      </div>
+      <a href="https://github.com/ahmedwsiim/terraform-basic-structure" target="_blank" class="btn-link">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🤝 More Hands</h3>
+      </div>
+      <p>Charity donation app built with React Native + Firebase. Real-time sync, payment UI, animations, and crash-free experience.</p>
+      <div class="tags">
+        <span>React Native</span><span>Firebase</span><span>Mobile</span>
+      </div>
+      <a href="#" target="_blank" class="btn-link">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🧠 RAG-Based Intelligent Query Bot</h3>
+      </div>
+      <p>LangChain + FAISS + OpenAI APIs. Processes academic docs, provides 90%+ relevance answers with a Streamlit UI.</p>
+      <div class="tags">
+        <span>LangChain</span><span>RAG</span><span>Streamlit</span>
+      </div>
+      <a href="#" target="_blank" class="btn-link">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>💰 Revenue Management System</h3>
+      </div>
+      <p>Backend financial tracker to manage revenues and automate business reporting with scalable database integration.</p>
+      <div class="tags">
+        <span>Backend</span><span>SQL</span><span>Automation</span>
+      </div>
+      <a href="#" target="_blank" class="btn-link">View Project →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Certifications -->
+<section id="certifications" class="section reveal">
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo" class="cert-logo">
+      <h3>IBM: Introduction to Containers</h3>
+      <p>Docker • Kubernetes • OpenShift</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle Logo" class="cert-logo">
+      <h3>Oracle OCI Foundations Associate</h3>
+      <p>Core Cloud Infrastructure • Compute • Storage • Networking</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud Logo" class="cert-logo">
+      <h3>Google Cloud Security</h3>
+      <p>Principles in Cloud Computing • Risk Management</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud Logo" class="cert-logo">
+      <h3>Google Cloud Fundamentals</h3>
+      <p>Cloud Concepts • Vulnerability & Compliance</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.svg" alt="Postman Logo" class="cert-logo">
+      <h3>Postman API Student Expert</h3>
+      <p>REST APIs • Testing • Documentation</p>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" class="cert-logo">
+      <h3>Atlassian Git</h3>
+      <p>Version Control • Branching • Collaboration</p>
+    </div>
+
+    <div class="cert-card">
+  <div class="cert-logos">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" 
+         alt="USA Flag" class="cert-logo small-logo">
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Seal_of_the_United_States_Department_of_Homeland_Security.svg" 
+         alt="DHS Logo" class="cert-logo"> -->
+  </div>
+  <h3>US-DHS Cybersecurity</h3>
+  <p>Vulnerabilities • ICS Domains • Critical Infrastructure</p>
+</div>
+
+
+  </div>
+</section>
+
+<!-- Skills
+<section id="skills" class="section reveal">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Languages</h3>
+      <p>Python, C++, Bash, JavaScript</p>
+    </div>
+    <div class="skill-card">
+      <h3>DevOps</h3>
+      <p>Docker, Docker Compose, NGINX, CI/CD, Git</p>
+    </div>
+    <div class="skill-card">
+      <h3>Cloud</h3>
+      <p>AWS, Azure, GCP</p>
+    </div>
+    <div class="skill-card">
+      <h3>IaC & Tools</h3>
+      <p>Terraform, Postman, GitHub Actions, Streamlit</p>
+    </div>
+    <div class="skill-card">
+      <h3>Databases</h3>
+      <p>SQL, MongoDB, Firebase</p>
+    </div>
+    <div class="skill-card">
+      <h3>Other</h3>
+      <p>Arduino, RAG</p>
+    </div>
+  </div>
+</section> -->
+
+<!-- Experience -->
+<section id="experience" class="section reveal">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Systems Limited</h3>
+        <span class="role">Cloud Modernization Services Intern</span>
+        <span class="date">Jul – Aug 2025</span>
+        <ul>
+          <li>Built GitHub Actions CI/CD pipelines for automated Azure and AWS deployments.</li>
+          <li>Containerized MERN stack with Docker & Compose for scalable deployments.</li>
+          <li>Configured NGINX with SSL and load balancing for secure routing.</li>
+          <li>Automated EC2 provisioning using Terraform with secure SSH.</li>
+          <li>Managed Linux servers for networking and reliability.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Faysal Bank Limited</h3>
+        <span class="role">Networking & Infrastructure Intern</span>
+        <span class="date">Jul – Aug 2024</span>
+        <ul>
+          <li>Resolved 90+ software and hardware issues, reducing downtime by 40%.</li>
+          <li>Configured LAN/WAN with routers, switches, and firewalls.</li>
+          <li>Delivered Tier 1/2 support to 50+ users, achieving 92% resolution success.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section reveal">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Bahauddin Zakariya University</h3>
+        <span class="role">Bachelor’s in Computer Science</span>
+        <span class="date">2022 – 2026</span>
+        <p><strong>CGPA:</strong> 3.85 / 4.00</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Punjab College</h3>
+        <span class="role">FSc Pre-Engineering</span>
+        <span class="date">2020 – 2022</span>
+        <p><strong>Grade:</strong> A</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section reveal">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    
+    <div class="skill-card">
+      <h3>💻 Languages</h3>
+      <p>Python, C++, Bash, JavaScript</p>
+      <div class="progress"><span data-progress="90"></span></div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>⚙️ DevOps</h3>
+      <p>Docker, Docker Compose, NGINX, CI/CD, Git</p>
+      <div class="progress"><span data-progress="85"></span></div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>☁️ Cloud</h3>
+      <p>AWS, Azure, GCP</p>
+      <div class="progress"><span data-progress="80"></span></div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>🛠️ IaC & Tools</h3>
+      <p>Terraform, Postman, GitHub Actions, Streamlit</p>
+      <div class="progress"><span data-progress="75"></span></div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>🗄️ Databases</h3>
+      <p>SQL, MongoDB, Firebase</p>
+      <div class="progress"><span data-progress="70"></span></div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>🔬 Other</h3>
+      <p>Arduino, RAG</p>
+      <div class="progress"><span data-progress="60"></span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Leadership & Volunteering -->
+<section id="leadership" class="section reveal">
+  <h2>Leadership & Volunteering</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>DevOps Lead</h3>
+        <span class="role">Microsoft Learn SA Multan</span>
+        <span class="date">Jul 2024 – Apr 2025</span>
+        <p>Designed study plans, fostered cloud learning, and promoted productive teamwork.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Member</h3>
+        <span class="role">Google Developer Student Club (GDSC BZU)</span>
+        <span class="date">Aug 2024 – Present</span>
+        <p>Supporting event planning and technical community engagement.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Cloud Computing Lead</h3>
+        <span class="role">The Youth Matrix</span>
+        <span class="date">May 2025 – Present</span>
+        <p>Leading cloud learning initiatives to educate youth through training & collaboration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Languages
+<section id="languages" class="section reveal">
+  <h2>Languages</h2>
+  <ul class="lang-list">
+    <li><strong>English</strong> – Full Professional Proficiency</li>
+    <li><strong>Urdu</strong> – Native Language</li>
+  </ul>
+</section> -->
+
+
+<!-- Contact & Footer -->
+<section id="contact" class="contact-footer section reveal">
+  <h2 class="footer-title">Let’s Connect</h2>
+  <!-- <p class="contact-subtitle">Collaborate • Innovate • Build</p> -->
+
+  <div class="contact-links">
+    <a href="mailto:mo.ahmedwasiim@gmail.com" target="_blank" class="contact-icon" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-7.01V6H4zm0 12h16V8l-8 7-8-7v10z"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/ahmedwsiim" target="_blank" class="contact-icon" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4v13h-4V8zm7.5 0h3.7v1.8h.05c.52-.99 1.78-2.05 3.65-2.05 3.9 0 4.6 2.57 4.6 5.9V21h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.18 0-2.51 1.7-2.51 3.45V21h-4V8z"/></svg>
+    </a>
+    <a href="https://github.com/ahmedwsiim" target="_blank" class="contact-icon" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.5.11-3.13 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.87-.39s1.95.13 2.87.39c2.2-1.5 3.18-1.19 3.18-1.19.63 1.63.23 2.83.11 3.13.75.81 1.2 1.85 1.2 3.11 0 4.43-2.7 5.41-5.27 5.69.42.36.8 1.1.8 2.22 0 1.6-.01 2.9-.01 3.3 0 .31.21.67.8.56A10.51 10.51 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/></svg>
+    </a>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <!-- <span>© 2025 Muhammad Ahmad</span> -->
+    <span>Made with ❤️</span>
+  </div>
+</section>
+
+  <script src="script.js"></script>
 </body>
 </html>

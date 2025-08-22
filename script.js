@@ -1,99 +1,57 @@
-// ===============================
-// Theme Toggle with Persistence
-// ===============================
-(function(){
-  const toggle = document.getElementById('themeToggle');
-  const key = 'pref-theme';
-  const root = document.documentElement;
-
-  const setTheme = (t) => {
-    if (t === 'light') { root.classList.add('light'); }
-    else { root.classList.remove('light'); }
-    localStorage.setItem(key, t);
-  };
-
-  // Initialize theme
-  const saved = localStorage.getItem(key);
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  setTheme(saved || (prefersLight ? 'light' : 'dark'));
-
-  // Glyph swap for fun
-  const setGlyph = () => toggle.textContent = root.classList.contains('light') ? '◐' : '●';
-  setGlyph();
-
-  toggle.addEventListener('click', () => {
-    const next = root.classList.contains('light') ? 'dark' : 'light';
-    setTheme(next);
-    setGlyph();
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
   });
-})();
+});
 
-// ===============================
-// Scroll Reveal Animation
-// ===============================
-(function(){
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-        io.unobserve(e.target);
-      }
+// Active nav link highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 200;
+    if (scrollY >= sectionTop) current = section.id;
+  });
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// Theme toggle
+const toggleBtn = document.getElementById("theme-toggle");
+// Set correct icon on load
+toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+
+// Animate skill bars when in view
+const skillSection = document.getElementById("skills");
+const skillBars = document.querySelectorAll(".progress span");
+
+function animateSkills() {
+  const sectionTop = skillSection.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (sectionTop < windowHeight - 100) {
+    skillBars.forEach(bar => {
+      const target = bar.getAttribute("data-progress");
+      bar.style.width = target + "%";
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-})();
-
-// ===============================
-// Dynamic Footer Year
-// ===============================
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
+    window.removeEventListener("scroll", animateSkills); // run once
+  }
 }
 
-// ===============================
-// 3D Tilt Effect for Cards
-// ===============================
-(function(){
-  const tiltElements = document.querySelectorAll('.card, .stat-card');
-
-  tiltElements.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; 
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * 6; // tilt intensity
-      const rotateY = ((x - centerX) / centerX) * -6;
-
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'rotateX(0) rotateY(0) scale(1)';
-    });
-  });
-})();
-
-// ===============================
-// Button Glow Parallax
-// ===============================
-(function(){
-  const btns = document.querySelectorAll('.btn');
-  btns.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      btn.style.background = `radial-gradient(circle at ${x}px ${y}px, #60a5fa, #38bdf8)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-      btn.style.background = 'linear-gradient(135deg, var(--accent), #60a5fa)';
-    });
-  });
-})();
+window.addEventListener("scroll", animateSkills);
